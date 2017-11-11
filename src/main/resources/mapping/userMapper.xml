@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gwj.jnshu.dao.UserDao">
+
+    <!--登录-->
+    <select id="login" resultType="com.gwj.jnshu.entities.User" parameterType="com.gwj.jnshu.entities.User">
+        SELECT * FROM tb_user WHERE username = #{username} and password = #{password}
+    </select>
+
+    <!--注册-->
+    <insert id="addUser" parameterType="com.gwj.jnshu.entities.User">
+        INSERT INTO tb_user(username,password) VALUES (#{username},#{password})
+    </insert>
+
+</mapper>
+
